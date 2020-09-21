@@ -9,13 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
+import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
+import { ListComponent } from './list/list.component';
+import {AgmCoreModule} from "@agm/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     AccueilComponent,
-    CarteComponent
+    CarteComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,11 @@ import { CarteComponent } from './carte/carte.component';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    MatMenuModule,
+    HttpClient,
+    HttpClientJsonpModule,
+    AgmCoreModule.forRoot({apiKey:'AIzaSyC6kx9OUJ-JtD5GXNPw3sr8ARmKuumVzYs'})
   ],
   providers: [],
   bootstrap: [AppComponent]
