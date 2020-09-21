@@ -9,9 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
-import { HttpClientJsonpModule } from '@angular/common/http';
+import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
 import { ListComponent } from './list/list.component';
-import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -28,9 +27,8 @@ import {AgmCoreModule} from '@agm/core';
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
-    MatMenuModule,
-    HttpClientJsonpModule,
-    AgmCoreModule.forRoot({apiKey:'AIzaSyC6kx9OUJ-JtD5GXNPw3sr8ARmKuumVzYs'})
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
