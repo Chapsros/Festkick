@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
-import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClientJsonpModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import {AgmCoreModule} from '@agm/core';
 
@@ -28,6 +28,10 @@ import {AgmCoreModule} from '@agm/core';
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
+<<<<<<< HEAD
+=======
+    MatMenuModule,
+>>>>>>> d0e3a0598f51bd437de3601418016ed44e9cce53
     HttpClientJsonpModule,
     AgmCoreModule.forRoot({apiKey:'AIzaSyC6kx9OUJ-JtD5GXNPw3sr8ARmKuumVzYs'})
   ],
