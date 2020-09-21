@@ -20,8 +20,8 @@ export class ListComponent implements OnInit {
   getEventData() {
     this.serEvent.getEvents(this.lat, this.lon).subscribe(
       (data) => {
-        this.event = data
+        this.event = data;
       }
-    )
+    );
   }
 }
