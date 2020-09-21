@@ -28,10 +28,6 @@ import {AgmCoreModule} from '@agm/core';
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
-<<<<<<< HEAD
-=======
-    MatMenuModule,
->>>>>>> d0e3a0598f51bd437de3601418016ed44e9cce53
     HttpClientJsonpModule,
     AgmCoreModule.forRoot({apiKey:'AIzaSyC6kx9OUJ-JtD5GXNPw3sr8ARmKuumVzYs'})
   ],
