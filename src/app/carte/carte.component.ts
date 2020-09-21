@@ -47,9 +47,7 @@ export class CarteComponent implements AfterViewInit {
 
     mainLayer.addTo(this.map);
     const descriptionWikipedia = `
-      Le parc du Thabor, situé à Rennes à proximité du centre-ville,
-      est un parc public aménagé sur plus de dix hectares dont la particularité est de mêler un jardin à la française,
-      un jardin à l’anglaise et un important jardin botanique.`;
+      Le parc du Thabor, situé à Rennes à proximité du centre-ville.`;
     const popupOptions = {
       coords: parcThabor,
       text: descriptionWikipedia,
