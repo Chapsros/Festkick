@@ -10,13 +10,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {AgmCoreModule} from '@agm/core';
 import { CarteComponent } from './carte/carte.component';
+import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     AccueilComponent,
-    CarteComponent
+    CarteComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,8 @@ import { CarteComponent } from './carte/carte.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
+    HttpClient,
+    HttpClientJsonpModule,
     AgmCoreModule.forRoot({apiKey:'AIzaSyC6kx9OUJ-JtD5GXNPw3sr8ARmKuumVzYs'})
   ],
   providers: [],
