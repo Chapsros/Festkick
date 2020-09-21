@@ -10,7 +10,7 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class CarteComponent implements AfterViewInit {
   map;
-  data: Object;
+ // data: Object;
 
   // retrieve from https://gist.github.com/ThomasG77/61fa02b35abf4b971390
   smallIcon = new L.Icon({
