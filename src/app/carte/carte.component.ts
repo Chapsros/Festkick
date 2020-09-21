@@ -10,8 +10,6 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class CarteComponent implements AfterViewInit {
   map;
-
-  ip = '94.228.36.39';
   data: Object;
 
   // retrieve from https://gist.github.com/ThomasG77/61fa02b35abf4b971390
@@ -28,20 +26,20 @@ export class CarteComponent implements AfterViewInit {
   constructor(private servis: SongkickService) { }
 
   getSongData(): any{
-    this.servis.getsong(this.ip).subscribe((data: HttpResponse<any>) => {
+    this.servis.getsong().subscribe((data: HttpResponse<any>) => {
       this.data = data;
     });
   }
 
   ngAfterViewInit(): void {
     this.getSongData();
-    this.createMap(45.745649, 4.837608);
+    this.createMap();
   }
 
-  createMap(latitude: any, longitude: any): any{
+  createMap(): any{
     const Location = {
-      lat: latitude,
-      lng: longitude,
+      lat: this.data.resultsPage.clientLocation.lat,
+      lng: this.data.resultsPage.clientLocation.lng
     };
 
     const zoomLevel = 12;
@@ -76,9 +74,4 @@ export class CarteComponent implements AfterViewInit {
       marker.addTo(this.map).bindPopup(text);
     }
   }
-
-
-//  https://api.songkick.com/api/3.0/events.json?apikey={ apikey }&location=ip:{ }
-
 }
-
