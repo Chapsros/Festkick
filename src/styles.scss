@@ -2,18 +2,22 @@
 
 .map-wrapper {
   position: absolute;
-  top: 0;
+  top: 200px;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .map-border {
-  border: 5px solid black;
-  height: 100%;
+  border: 1px solid black;
+  height: 70%;
+
 }
 
 #map {
   height: 100%;
 }
+
+
