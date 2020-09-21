@@ -1,27 +1,43 @@
-# Festkick
+TP Angular - Festkick
+L’entreprise Brandslive a décidé l’an dernier de se développer sur le marché des applications
+webs en lançant un nouveau service : FestKick, un service de localisation de concerts.
+Vous êtes l’équipe en charge de développer cette application.
+Voici la requête de Brandslive :
+“FestKick doit permettre aux utilisateurs de trouver les concerts qui sont à venir dans leur
+ville.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+En tant qu’utilisateur, je dois arriver sur une page d’accueil qui me permette d’entrer un nom
+de ville. Ou idéalement que je sois localisé automatiquement.
+Une fois que j’ai validé ma recherche, je dois pouvoir voir une liste des évènements à venir
+dans la ville.
 
-## Development server
+Il faudrait que je puisse voir d’un coup d’oeil quels artistes viennent à cet évènement, à
+quelle date et où est-ce que ca va avoir lieu.
+Ensuite si je veux plus d’infos, je devrai cliquer sur un élément de cette liste. Là, il me faudra
+un détail de l’évènement au plus informatif possible. Une description des artistes, de la salle
+de concert quand c’est possible, avec des photos. On pourrait aussi penser à intégrer une
+vidéo Youtube de cet artiste, pourquoi pas ! Et le prix d’un billet aussi.”
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Bonus : Si à la place d’afficher les évènements en liste, ils apparaissent sur une carte (voir
+Leaflet API) (+3 points)
+https://github.com/Asymmetrik/ngx-leaflet
 
-## Code scaffolding
+Rendu
+Vous devez rendre un diagramme de composants exposant :
+- Tous les composants de votre app
+- Leurs relations parent-enfant
+- L’emplacement du routeur
+- Une maquette de votre application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Vous devez également rendre le code sur un repository git déposé sur la plateforme de votre
+choix. Un lien du repository devra être envoyé avant le Mercredi 23 Mai à 10h à l’adresse :
+huber.gerard@ynov.com
+Attention à ne jamais push le dossier node_modules !
+Vous devrez présenter votre TP devant les autres Mercredi après la pause de 10h.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Cette présentation doit contenir :
+- une présentation de votre conception et de vos choix d’implémentation (bouton,
+carte, localisation auto ?)
+- votre maquette
+- une démonstration de votre application
+Le temps de parole est libre.
