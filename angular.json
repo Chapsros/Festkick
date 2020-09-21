@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Festkick"
+    }
+  },
+  "defaultProject": "Festkick",
+  "cli": {
+    "analytics": false
+  }
 }
