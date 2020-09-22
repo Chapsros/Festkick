@@ -10,9 +10,11 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class CarteComponent implements AfterViewInit {
   map;
- // data: Object;
+  data: any;
+  latitude: number;
+  longitude: number;
 
-  // retrieve from https://gist.github.com/ThomasG77/61fa02b35abf4b971390
+
   smallIcon = new L.Icon({
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png',
     iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png',
@@ -28,24 +30,26 @@ export class CarteComponent implements AfterViewInit {
   getSongData(): any{
     this.servis.getsong().subscribe((data: HttpResponse<any>) => {
       this.data = data;
+      this.latitude = this.data.resultsPage.clientLocation.lat;
+      this.longitude = this.data.resultsPage.clientLocation.lng;
+      this.createMap(this.latitude, this.longitude);
     });
   }
 
   ngAfterViewInit(): void {
     this.getSongData();
-    this.createMap();
   }
 
-  createMap(): any{
+  createMap(latitude: number, longitude: number): any{
     const Location = {
-      lat: this.data.resultsPage.clientLocation.lat,
-      lng: this.data.resultsPage.clientLocation.lng
+      lati: latitude,
+      long: longitude,
     };
 
     const zoomLevel = 12;
 
     this.map = L.map('map', {
-      center: [Location.lat, Location.lng],
+      center: [Location.lati, Location.long],
       zoom: zoomLevel
     });
 
@@ -67,7 +71,7 @@ export class CarteComponent implements AfterViewInit {
   }
 
   addMarker({coords, text, open}): any {
-    const marker = L.marker([coords.lat, coords.lng], { icon: this.smallIcon });
+    const marker = L.marker([coords.lati, coords.long], { icon: this.smallIcon });
     if (open) {
       marker.addTo(this.map).bindPopup(text).openPopup();
     } else {
