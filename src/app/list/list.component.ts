@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SongkickService} from '../songkick.service';
+import {HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
@@ -8,14 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   hidden: boolean;
+  data: any;
 
-  constructor() { }
+  constructor(private serv: SongkickService) {
+  }
+
+  ngOnInit(): void {
+    this.hidden = false;
+    this.getSongData();
+  }
 
   public toggleDisplay(): void {
     this.hidden = !this.hidden;
   }
 
-  ngOnInit(): void {
-    this.hidden = false;
+  getSongData(): any {
+    this.serv.getsong().subscribe((data: HttpResponse<any>) => {
+      this.data = data;
+    });
   }
 }
