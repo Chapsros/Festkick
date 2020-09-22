@@ -10,7 +10,7 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class CarteComponent implements AfterViewInit {
   map;
- // data: Object;
+ data: any;
 
   // retrieve from https://gist.github.com/ThomasG77/61fa02b35abf4b971390
   smallIcon = new L.Icon({
@@ -27,7 +27,7 @@ export class CarteComponent implements AfterViewInit {
 
   getSongData(): any{
     this.servis.getsong().subscribe((data: HttpResponse<any>) => {
-      this.data = data;
+   this.data = data;
     });
   }
 
@@ -38,14 +38,14 @@ export class CarteComponent implements AfterViewInit {
 
   createMap(): any{
     const Location = {
-      lat: this.data.resultsPage.clientLocation.lat,
-      lng: this.data.resultsPage.clientLocation.lng
+     lat: this.data.resultsPage.clientLocation.lat,
+     lng: this.data.resultsPage.clientLocation.lng
     };
 
     const zoomLevel = 12;
 
     this.map = L.map('map', {
-      center: [Location.lat, Location.lng],
+     center: [Location.lat, Location.lng],
       zoom: zoomLevel
     });
 

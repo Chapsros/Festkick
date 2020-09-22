@@ -1,4 +1,4 @@
-<div class="container border border-dark mt-3">
+<div *ngIf="!hidden" class="container border border-dark mt-3">
   <div class="row">
   <div class="col-6 border border p-2">Date et heure : {{"Données..."}}</div>
   <div class="col p-2">Artistes : {{"Données..."}}</div>
@@ -8,11 +8,11 @@
     <div class="col-3 border border p-2 pt-3 pb-3">Lieu : {{"Données..."}}</div>
     <div class="col">
       <div class="float-right pt-3">
-        <button>+</button></div>
+        <button (click)="toggleDisplay()" *ngIf="!hidden">+</button></div>
     </div>
   </div>
 </div>
-<div class="container border border-dark mt-3">
+<div *ngIf="hidden" class="container border border-dark mt-3">
   <div class="row">
     <div class="col-4 border border p-2">Date et heure : {{"Données..."}}</div>
     <div class="col border border p-2">Artistes : {{"Données..."}}</div>
@@ -26,7 +26,7 @@
     <div class="col border border p-2 pt-3 pb-3">Vidéo Youtube : {{"Données..."}}
       <div class="float-right pt-3">
         <input type="text" placeholder="Argent €">
-        <button>-</button>
+        <button (click)="toggleDisplay()" *ngIf="hidden">-</button>
       </div>
     </div>
   </div>
