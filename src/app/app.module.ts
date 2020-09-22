@@ -10,7 +10,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-
 import { ListComponent } from './list/list.component';
 
 @NgModule({

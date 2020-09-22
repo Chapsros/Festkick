@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SongkickService } from '../songkick.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +7,9 @@ import { SongkickService } from '../songkick.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private serv: SongkickService) { 
-
+  constructor() {
   }
 
   ngOnInit(): void {
   }
-
 }

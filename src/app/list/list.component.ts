@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SongkickService} from '../songkick.service';
 import {HttpResponse} from '@angular/common/http';
 
@@ -9,9 +9,13 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
 
+  city = 'Paris';
+
+
   hidden: boolean;
   data: any;
-  city: string;
+  dataByCity: any;
+
 
   constructor(private serv: SongkickService) {
   }
@@ -34,8 +38,8 @@ export class ListComponent implements OnInit {
 
   getSongDataByCity(): any {
     this.serv.getSongByCity(this.city).subscribe((data: HttpResponse<any>) => {
-      this.data = data;
-    })
+      this.dataByCity = data;
+    });
   }
 }
 
