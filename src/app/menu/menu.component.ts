@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SongkickService } from '../songkick.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  constructor() { }
+  
+  constructor(private serv: SongkickService) { 
+
+  }
+
   ngOnInit(): void {
+    this.getSongDataByCity;
   }
 
 }

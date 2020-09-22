@@ -11,21 +11,31 @@ export class ListComponent implements OnInit {
 
   hidden: boolean;
   data: any;
+  city: string;
 
-  constructor(private serv: SongkickService) { }
+  constructor(private serv: SongkickService) {
+  }
 
   ngOnInit(): void {
     this.hidden = false;
     this.getSongData();
+    this.getSongDataByCity();
   }
 
   public toggleDisplay(): void {
     this.hidden = !this.hidden;
   }
 
-  getSongData(): any{
+  getSongData(): any {
     this.serv.getsong().subscribe((data: HttpResponse<any>) => {
       this.data = data;
     });
   }
+
+  getSongDataByCity(): any {
+    this.serv.getSongByCity(this.city).subscribe((data: HttpResponse<any>) => {
+      this.data = data;
+    })
+  }
 }
+
