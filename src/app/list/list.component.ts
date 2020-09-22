@@ -12,7 +12,8 @@ export class ListComponent implements OnInit {
   hidden: boolean;
   data: any;
 
-  constructor(private serv: SongkickService) { }
+  constructor(private serv: SongkickService) {
+  }
 
   ngOnInit(): void {
     this.hidden = false;
@@ -23,8 +24,9 @@ export class ListComponent implements OnInit {
     this.hidden = !this.hidden;
   }
 
-  getSongData(): any{
+  getSongData(): any {
     this.serv.getsong().subscribe((data: HttpResponse<any>) => {
       this.data = data;
     });
+  }
 }
