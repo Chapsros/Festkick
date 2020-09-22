@@ -13,9 +13,19 @@ export class CarteComponent implements AfterViewInit {
   data: any;
   latitude: number;
   longitude: number;
-
+  description = 'Vous êtes ici';
 
   smallIcon = new L.Icon({
+    iconUrl: 'https://cdn.pixabay.com/photo/2020/04/29/16/50/navigation-5109651_960_720.png',
+    iconRetinaUrl: 'https://cdn.pixabay.com/photo/2020/04/29/16/50/navigation-5109651_960_720.png',
+    iconSize:    [25, 41],
+    iconAnchor:  [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    shadowSize:  [41, 41]
+  });
+
+  smallIcon2 = new L.Icon({
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon.png',
     iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-icon-2x.png',
     iconSize:    [25, 41],
@@ -33,6 +43,15 @@ export class CarteComponent implements AfterViewInit {
       this.latitude = this.data.resultsPage.clientLocation.lat;
       this.longitude = this.data.resultsPage.clientLocation.lng;
       this.createMap(this.latitude, this.longitude);
+      for (const i of this.data.resultsPage.results.event){
+        this.addMarker({
+          latitude: i.location.lat,
+          longitude: i.location.lng,
+          text: i.displayName,
+          open: false,
+          icon: this.smallIcon
+        });
+      }
     });
   }
 
@@ -60,18 +79,18 @@ export class CarteComponent implements AfterViewInit {
     });
 
     mainLayer.addTo(this.map);
-    const descriptionWikipedia = `
-      Ynov Lyon.`;
     const popupOptions = {
-      coords: Location,
-      text: descriptionWikipedia,
-      open: true
+      latitude: Location.lati,
+      longitude: Location.long,
+      text: this.description,
+      open: false,
+      icon: this.smallIcon2
     };
     this.addMarker(popupOptions);
   }
 
-  addMarker({coords, text, open}): any {
-    const marker = L.marker([coords.lati, coords.long], { icon: this.smallIcon });
+  addMarker({latitude, longitude, text, open, icon}): any {
+    const marker = L.marker([latitude, longitude], { icon });
     if (open) {
       marker.addTo(this.map).bindPopup(text).openPopup();
     } else {
