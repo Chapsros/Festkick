@@ -9,10 +9,6 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class AccueilComponent implements OnInit {
 
-  longitude = 48.114384;
-  latitude = -1.669494;
-
-  ip = '94.228.36.39';
   data: any;
 
   constructor(private serv: SongkickService) { }
@@ -22,7 +18,7 @@ export class AccueilComponent implements OnInit {
   }
 
   getSongData(): any{
-    this.serv.getsong(this.ip).subscribe((data: HttpResponse<any>) => {
+    this.serv.getsong().subscribe((data: HttpResponse<any>) => {
       this.data = data;
     });
   }

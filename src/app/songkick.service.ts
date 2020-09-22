@@ -12,7 +12,12 @@ export class SongkickService {
 
   constructor(private http: HttpClient) { }
 
+<<<<<<< HEAD
   getsong(ip: string): Observable<any> {
     return this.http.get('https://api.songkick.com/api/3.0/events.json?apikey=' + SongkickService.API_key + '&location=clientip' );
+=======
+  getsong(): Observable<any> {
+    return this.http.get('https://api.songkick.com/api/3.0/events.json?apikey=' + SongkickService.API_key + '&location=clientip');
+>>>>>>> beaf93a881f40ec583b904fceb7150626425702c
   }
 }

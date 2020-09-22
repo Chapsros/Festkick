@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
-import {HttpClientModule, HttpClientJsonpModule} from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+
 import { ListComponent } from './list/list.component';
 
 @NgModule({
@@ -28,7 +29,7 @@ import { ListComponent } from './list/list.component';
     MatButtonModule,
     MatMenuModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

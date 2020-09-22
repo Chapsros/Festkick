@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../events.service';
 
 @Component({
   selector: 'app-list',
@@ -8,20 +7,8 @@ import { EventsService } from '../events.service';
 })
 export class ListComponent implements OnInit {
 
-  lat: number;
-  lon: number;
-  event: Object;
-
-  constructor(private serEvent: EventsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  getEventData() {
-    this.serEvent.getEvents(this.lat, this.lon).subscribe(
-      (data) => {
-        this.event = data
-      }
-    )
   }
 }
