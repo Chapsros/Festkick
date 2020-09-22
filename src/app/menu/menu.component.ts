@@ -7,13 +7,12 @@ import { SongkickService } from '../songkick.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  
+
   constructor(private serv: SongkickService) { 
 
   }
 
   ngOnInit(): void {
-    this.getSongDataByCity;
   }
 
 }
