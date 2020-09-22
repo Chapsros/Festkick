@@ -15,15 +15,16 @@ export class ListComponent implements OnInit {
   hidden: boolean;
   data: any;
   dataByCity: any;
-
+  eventId: any;
+  details: any;
 
   constructor(private serv: SongkickService) {
   }
 
   ngOnInit(): void {
     this.hidden = false;
+    this.eventId = this.data.resultsPage.results.event[0];
     this.getSongData();
-    this.getSongDataByCity();
   }
 
   public toggleDisplay(): void {
@@ -41,5 +42,11 @@ export class ListComponent implements OnInit {
       this.dataByCity = data;
     });
   }
+
+    getDataDetails(): any{
+      this.serv.getDetails(this.eventId).subscribe((details: HttpResponse<any>) => {
+        this.details = details;
+      })
+    }
 }
 
