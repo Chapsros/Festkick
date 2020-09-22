@@ -14,18 +14,19 @@ export class ListComponent implements OnInit {
 
   hidden: boolean;
   data: any;
+  resultData: any;
   dataByCity: any;
-  eventId: any;
-  details: any;
+  resultDataByCity: any;
 
   constructor(private serv: SongkickService) {
   }
 
   ngOnInit(): void {
     this.hidden = false;
-    this.eventId = this.data.resultsPage.results.event[0];
     this.getSongData();
+    this.getSongDataByCity();
   }
+
 
   public toggleDisplay(): void {
     this.hidden = !this.hidden;
@@ -34,19 +35,31 @@ export class ListComponent implements OnInit {
   getSongData(): any {
     this.serv.getsong().subscribe((data: HttpResponse<any>) => {
       this.data = data;
+      for (const i of this.data.resultsPage.results.event) {
+        this.getDataDetails(i.id);
+      }
     });
   }
 
   getSongDataByCity(): any {
     this.serv.getSongByCity(this.city).subscribe((data: HttpResponse<any>) => {
       this.dataByCity = data;
+      for (const i of this.dataByCity.resultsPage.results.location) {
+        this.getDataDetailsByCity(i.metroArea.id);
+      }
     });
   }
 
-    getDataDetails(): any{
-      this.serv.getDetails(this.eventId).subscribe((details: HttpResponse<any>) => {
-        this.details = details;
-      })
-    }
+  getDataDetails(id): any{
+    this.serv.getDetails(id).subscribe((details: HttpResponse<any>) => {
+      this.resultData = details;
+    });
+  }
+
+  getDataDetailsByCity(id): any{
+    this.serv.getDetails(id).subscribe((details: HttpResponse<any>) => {
+      this.resultDataByCity = details;
+    });
+  }
 }
 
