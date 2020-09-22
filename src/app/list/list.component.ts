@@ -19,7 +19,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.hidden = false;
     this.getSongData();
-    this.getSongDataByCity();
   }
 
   public toggleDisplay(): void {
