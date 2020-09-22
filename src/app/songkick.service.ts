@@ -11,6 +11,7 @@ export class SongkickService {
   static readonly API_key = 'io09K9l3ebJxmxe2';
 
   city: any;
+  eventId: number;
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +21,9 @@ export class SongkickService {
 
   getSongByCity(city): Observable<any> {
     return this.http.get('https://api.songkick.com/api/3.0/search/locations.json?query='+ city +'&apikey=' + SongkickService.API_key)
+  }
+
+  getDetails(eventId): Observable<any> {
+    return this.http.get('https://api.songkick.com/api/3.0/events/' + eventId + '.json?apikey=' + SongkickService.API_key)
   }
 }
