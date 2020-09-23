@@ -9,15 +9,13 @@ import {HttpResponse} from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
 
-  city = 'Paris';
-
+  city = null;
 
   hidden: boolean;
   data: any;
-
   resultData: any;
   dataByCity: any;
-  resultDataByCity: any;
+  resultDataByCity: {};
 
   constructor(private serv: SongkickService) {
   }
@@ -26,7 +24,6 @@ export class ListComponent implements OnInit {
     this.getSongData();
     this.getSongDataByCity();
   }
-
 
   public toggleDisplay(): void {
     this.hidden = !this.hidden;
@@ -62,4 +59,3 @@ export class ListComponent implements OnInit {
     });
   }
 }
-

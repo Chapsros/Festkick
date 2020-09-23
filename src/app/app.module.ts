@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule , LOCALE_ID} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -11,7 +11,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
-
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
@@ -39,7 +38,7 @@ import { Page2Component } from './page2/page2.component';
     MatButtonModule,
     MatMenuModule,
     HttpClientModule,
-    HttpClientJsonpModule,
+    HttpClientJsonpModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'fr'}],
   bootstrap: [AppComponent]
