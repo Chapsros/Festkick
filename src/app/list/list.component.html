@@ -34,68 +34,70 @@
     </div>
   </div>
 </div>
-<div *ngIf="city == city">
-  <div *ngFor="let list of resultDataByCity.resultsPage.results.event">
-    <div *ngIf="!hidden" class="container border border-dark mt-3">
-      <div class="row">
-        <div class="col-6 border border p-2">Date et heure : {{ list.start.date }} {{ list.start.time }}</div>
-        <div class="col p-2">Artistes : {{ list.performance[0].displayName }}</div>
-      </div>
-      <div class="row">
-        <div class="col-3 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>
-        <div class="col-3 border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>
-        <div class="col">
-          <div class="float-right pt-3">
-            <button (click)="toggleDisplay()" *ngIf="!hidden">+</button></div>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="hidden" class="container border border-dark mt-3">
-      <div class="row">
-        <div class="col-4 border border p-2">Date et heure : {{ list.start.date }} {{ list.start.time }}</div>
-        <div class="col border border p-2">Artistes : {{ list.performance[0].displayName }}</div>
-      </div>
-      <div class="row">
-        <div class="col-4 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>
-        <div class="col border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>
-      </div>
-      <div class="row">
-        <div class="col-4 border border p-2 pt-3 pb-3">Cliquez <a href="{{ list.uri }}">ici</a> pour plus de détail</div>
-        <div class="col border border p-2 pt-3 pb-3">Vidéo Youtube : {{"Données..."}}
-          <div class="float-right pt-3">
-            <button (click)="toggleDisplay()" *ngIf="hidden">-</button>
-          </div>
-<div *ngFor="let list of data.resultsPage.results.event">
-  <div *ngIf="!hidden" class="container border border-dark mt-3">
-    <div class="row">
-    <div class="col-6 border border p-2">Date et heure : {{ list.start.date | date:'EEEE d MMMM, y' }} à {{ list.start.time}}</div>
-    <div class="col p-2">Artistes : {{ list.performance[0].displayName }}</div>
-    </div>
-    <div class="row">
-      <div class="col-3 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>
-      <div class="col-3 border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>
-      <div class="col">
-        <div class="float-right pt-3">
-          <button (click)="toggleDisplay()" *ngIf="!hidden">+</button></div>
-      </div>
-    </div>
-  </div>
-  <div *ngIf="hidden" class="container border border-dark mt-3">
-    <div class="row">
-      <div class="col-4 border border p-2">Date et heure : {{ list.start.date | date:'EEEE d MMMM, y' }} à {{ list.start.time }}</div>
-      <div class="col border border p-2">Artistes : {{ list.performance[0].displayName }}</div>
-    </div>
-    <div class="row">
-      <div class="col-4 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>
-      <div class="col border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>
-    </div>
-    <div class="row">
-      <div class="col-4 border border p-2 pt-3 pb-3">Cliquez <a href="{{ list.uri }}">ici</a> pour plus de détail</div>
-      <div class="col border border p-2 pt-3 pb-3">Vidéo Youtube : {{"Données..."}}
-        <div class="float-right pt-3">
-          <button (click)="toggleDisplay()" *ngIf="hidden">-</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+<!--<div *ngIf="city == city">-->
+<!--  <div *ngFor="let list of resultDataByCity.resultsPage.results.event">-->
+<!--    <div *ngIf="!hidden" class="container border border-dark mt-3">-->
+<!--      <div class="row">-->
+<!--        <div class="col-6 border border p-2">Date et heure : {{ list.start.date }} {{ list.start.time }}</div>-->
+<!--        <div class="col p-2">Artistes : {{ list.performance[0].displayName }}</div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col-3 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>-->
+<!--        <div class="col-3 border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>-->
+<!--        <div class="col">-->
+<!--          <div class="float-right pt-3">-->
+<!--            <button (click)="toggleDisplay()" *ngIf="!hidden">+</button></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div *ngIf="hidden" class="container border border-dark mt-3">-->
+<!--      <div class="row">-->
+<!--        <div class="col-4 border border p-2">Date et heure : {{ list.start.date }} {{ list.start.time }}</div>-->
+<!--        <div class="col border border p-2">Artistes : {{ list.performance[0].displayName }}</div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col-4 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>-->
+<!--        <div class="col border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col-4 border border p-2 pt-3 pb-3">Cliquez <a href="{{ list.uri }}">ici</a> pour plus de détail</div>-->
+<!--        <div class="col border border p-2 pt-3 pb-3">Vidéo Youtube : {{"Données..."}}-->
+<!--          <div class="float-right pt-3">-->
+<!--            <button (click)="toggleDisplay()" *ngIf="hidden">-</button>-->
+<!--          </div>-->
+<!--<div *ngFor="let list of data.resultsPage.results.event">-->
+<!--  <div *ngIf="!hidden" class="container border border-dark mt-3">-->
+<!--    <div class="row">-->
+<!--    <div class="col-6 border border p-2">Date et heure : {{ list.start.date | date:'EEEE d MMMM, y' }} à {{ list.start.time}}</div>-->
+<!--    <div class="col p-2">Artistes : {{ list.performance[0].displayName }}</div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-3 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>-->
+<!--      <div class="col-3 border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>-->
+<!--      <div class="col">-->
+<!--        <div class="float-right pt-3">-->
+<!--          <button (click)="toggleDisplay()" *ngIf="!hidden">+</button></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div *ngIf="hidden" class="container border border-dark mt-3">-->
+<!--    <div class="row">-->
+<!--      <div class="col-4 border border p-2">Date et heure : {{ list.start.date | date:'EEEE d MMMM, y' }} à {{ list.start.time }}</div>-->
+<!--      <div class="col border border p-2">Artistes : {{ list.performance[0].displayName }}</div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-4 border border p-2 pt-3 pb-3">Ville : {{ list.venue.metroArea.displayName }}, {{ list.venue.metroArea.country.displayName }}</div>-->
+<!--      <div class="col border border p-2 pt-3 pb-3">Lieu : {{ list.venue.displayName }}</div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-4 border border p-2 pt-3 pb-3">Cliquez <a href="{{ list.uri }}">ici</a> pour plus de détail</div>-->
+<!--      <div class="col border border p-2 pt-3 pb-3">Vidéo Youtube : {{"Données..."}}-->
+<!--        <div class="float-right pt-3">-->
+<!--          <button (click)="toggleDisplay()" *ngIf="hidden">-</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
