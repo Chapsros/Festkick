@@ -11,10 +11,8 @@ export class ListComponent implements OnInit {
 
   hidden: boolean;
   data: any;
-
   constructor(private serv: SongkickService) {
   }
-
   ngOnInit(): void {
     this.hidden = false;
     this.getSongData();

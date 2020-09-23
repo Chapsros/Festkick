@@ -1,7 +1,7 @@
 <div *ngFor="let list of data.resultsPage.results.event">
   <div *ngIf="!hidden" class="container border border-dark mt-3">
     <div class="row">
-    <div class="col-6 border border p-2">Date et heure : {{ list.start.date }} {{ list.start.time }}</div>
+    <div class="col-6 border border p-2">Date et heure : {{ list.start.date | date:'EEEE d MMMM, y' }} à {{ list.start.time}}</div>
     <div class="col p-2">Artistes : {{ list.performance[0].displayName }}</div>
     </div>
     <div class="row">
@@ -15,7 +15,7 @@
   </div>
   <div *ngIf="hidden" class="container border border-dark mt-3">
     <div class="row">
-      <div class="col-4 border border p-2">Date et heure : {{ list.start.date }} {{ list.start.time }}</div>
+      <div class="col-4 border border p-2">Date et heure : {{ list.start.date | date:'EEEE d MMMM, y' }} à {{ list.start.time }}</div>
       <div class="col border border p-2">Artistes : {{ list.performance[0].displayName }}</div>
     </div>
     <div class="row">
