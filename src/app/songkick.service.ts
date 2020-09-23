@@ -26,3 +26,5 @@ export class SongkickService {
     return this.http.get('https://api.songkick.com/api/3.0/events/' + eventId + '.json?apikey=' + SongkickService.API_key)
   }
 }
+
+
