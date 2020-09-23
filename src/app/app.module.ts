@@ -11,11 +11,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import { CarteComponent } from './carte/carte.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
+
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
 registerLocaleData(localeFr);
 
+import { Page1Component } from './page1/page1.component';
+import { Page2Component } from './page2/page2.component';
 
 
 @NgModule({
@@ -24,13 +27,15 @@ registerLocaleData(localeFr);
     MenuComponent,
     AccueilComponent,
     CarteComponent,
-    ListComponent
+    ListComponent,
+    Page1Component,
+    Page2Component
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
     HttpClientModule,
